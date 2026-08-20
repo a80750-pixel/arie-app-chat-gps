@@ -21,6 +21,7 @@ export interface Dictionary {
     unsupported: string;
     retry: string;
     httpsHint: string;
+    deniedHint: string;
   };
   onboarding: {
     title: string;
@@ -141,6 +142,7 @@ export const translations: Record<Lang, Dictionary> = {
       unsupported: "GPS non supporté",
       retry: "Réessayer",
       httpsHint: "Le GPS nécessite une connexion sécurisée (HTTPS). Utilisez le site publié sur mobile.",
+      deniedHint: "Localisation refusée. Autorisez-la dans les réglages du navigateur (icône ⓘ ou cadenas à côté de l'adresse du site), puis rechargez la page.",
     },
     onboarding: {
       title: "Bienvenue sur SpotMessage",
@@ -259,6 +261,7 @@ export const translations: Record<Lang, Dictionary> = {
       unsupported: "GPS not supported",
       retry: "Retry",
       httpsHint: "GPS requires a secure connection (HTTPS). Use the published site on mobile.",
+      deniedHint: "Location denied. Allow it in your browser settings (the ⓘ or lock icon next to the site address), then reload the page.",
     },
     onboarding: {
       title: "Welcome to SpotMessage",
@@ -377,6 +380,7 @@ export const translations: Record<Lang, Dictionary> = {
       unsupported: "GPS אינו נתמך",
       retry: "נסה שוב",
       httpsHint: "GPS דורש חיבור מאובטח (HTTPS). השתמשו באתר המפורסם בנייד.",
+      deniedHint: "המיקום נדחה. אפשרו אותו בהגדרות הדפדפן (סמל ⓘ או מנעול ליד כתובת האתר), ולאחר מכן טענו מחדש את הדף.",
     },
     onboarding: {
       title: "ברוכים הבאים ל-SpotMessage",

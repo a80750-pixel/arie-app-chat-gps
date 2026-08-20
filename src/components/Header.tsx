@@ -10,10 +10,19 @@ interface HeaderProps {
   onToggleSimulation: () => void;
   geo: GeoState;
   onRetryGeo: () => void;
+  onShowGpsHint: (message: string) => void;
   onOpenProfile: () => void;
 }
 
-function GpsChip({ geo, onRetry }: { geo: GeoState; onRetry: () => void }) {
+function GpsChip({
+  geo,
+  onRetry,
+  onShowHint,
+}: {
+  geo: GeoState;
+  onRetry: () => void;
+  onShowHint: (message: string) => void;
+}) {
   const { t } = useI18n();
 
   const statusMap: Record<GeoState["status"], { label: string; color: string }> = {
@@ -27,14 +36,22 @@ function GpsChip({ geo, onRetry }: { geo: GeoState; onRetry: () => void }) {
 
   const info = statusMap[geo.status];
   const canRetry = geo.status === "denied" || geo.status === "error";
+  const hint = geo.status === "denied" ? t("gps.deniedHint") : t("gps.httpsHint");
 
   return (
     <button
       type="button"
-      onClick={canRetry ? onRetry : undefined}
+      onClick={
+        canRetry
+          ? () => {
+              onShowHint(hint);
+              onRetry();
+            }
+          : undefined
+      }
       className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium"
       style={{ background: "var(--bg-elevated-2)", color: "var(--text)" }}
-      title={canRetry ? t("gps.httpsHint") : undefined}
+      title={canRetry ? hint : undefined}
     >
       <span className="h-2 w-2 rounded-full" style={{ background: info.color }} />
       {info.label}
@@ -50,6 +67,7 @@ export default function Header({
   onToggleSimulation,
   geo,
   onRetryGeo,
+  onShowGpsHint,
   onOpenProfile,
 }: HeaderProps) {
   const { t, lang, setLang } = useI18n();
@@ -65,7 +83,7 @@ export default function Header({
       </div>
 
       <div className="flex flex-1 items-center justify-center gap-2 overflow-x-auto">
-        <GpsChip geo={geo} onRetry={onRetryGeo} />
+        <GpsChip geo={geo} onRetry={onRetryGeo} onShowHint={onShowGpsHint} />
 
         <button
           type="button"

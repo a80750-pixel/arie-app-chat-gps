@@ -106,6 +106,7 @@ export default function App() {
         onToggleSimulation={geo.toggleSimulation}
         geo={geo}
         onRetryGeo={geo.retry}
+        onShowGpsHint={pushToast}
         onOpenProfile={() => setShowProfile(true)}
       />
 
