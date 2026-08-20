@@ -36,9 +36,12 @@ export default function ProfileModal({ name, dropped, unlocked, onClose, onSave 
           value={value}
           onChange={(e) => setValue(e.target.value)}
           maxLength={40}
-          className="mb-4 w-full rounded-lg border px-3 py-2 text-sm outline-none"
+          className="mb-1.5 w-full rounded-lg border px-3 py-2 text-sm outline-none"
           style={{ background: "var(--bg-elevated-2)", borderColor: "var(--border)" }}
         />
+        <p className="mb-4 text-xs" style={{ color: "var(--text-muted)" }}>
+          {t("profile.nameHint")}
+        </p>
 
         <div className="mb-4 grid grid-cols-2 gap-2">
           <div className="rounded-lg p-3 text-center" style={{ background: "var(--bg-elevated-2)" }}>

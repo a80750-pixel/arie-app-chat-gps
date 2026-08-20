@@ -105,6 +105,7 @@ export interface Dictionary {
   profile: {
     title: string;
     nameLabel: string;
+    nameHint: string;
     save: string;
     stats: string;
     notesDropped: string;
@@ -226,6 +227,7 @@ export const translations: Record<Lang, Dictionary> = {
     profile: {
       title: "Profil",
       nameLabel: "Votre pseudo",
+      nameHint: "Ce pseudo est votre identité : pas de mot de passe. Quiconque tape le même pseudo, sur n'importe quel appareil, pourra agir à votre place.",
       save: "Enregistrer",
       stats: "Statistiques",
       notesDropped: "Notes déposées",
@@ -345,6 +347,7 @@ export const translations: Record<Lang, Dictionary> = {
     profile: {
       title: "Profile",
       nameLabel: "Your name",
+      nameHint: "This name is your identity — no password. Anyone who types the same name, on any device, can act as you.",
       save: "Save",
       stats: "Stats",
       notesDropped: "Notes dropped",
@@ -464,6 +467,7 @@ export const translations: Record<Lang, Dictionary> = {
     profile: {
       title: "פרופיל",
       nameLabel: "שם משתמש",
+      nameHint: "השם הזה הוא הזהות שלך - בלי סיסמה. כל מי שיקליד את אותו שם, מכל מכשיר, יוכל לפעול במקומך.",
       save: "שמור",
       stats: "סטטיסטיקה",
       notesDropped: "פתקים שהושארו",
