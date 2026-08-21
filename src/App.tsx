@@ -77,8 +77,8 @@ export default function App() {
   const droppedCount = messagesStore.messages.filter((m) => m.authorId === messagesStore.deviceId).length;
 
   const handleCompose = async (input: { title: string; text: string; tag: SpotMessage["tag"]; photo?: string; expiresAt: number | null }) => {
-    if (!geo.coords) return;
-    const result = await messagesStore.addMessage({ ...input, lat: geo.coords.lat, lng: geo.coords.lng });
+    if (!geo.realCoords) return;
+    const result = await messagesStore.addMessage({ ...input, lat: geo.realCoords.lat, lng: geo.realCoords.lng });
     if (result.ok) {
       setShowCompose(false);
       pushToast(t("toast.dropped"));
@@ -151,7 +151,7 @@ export default function App() {
         <button
           type="button"
           onClick={() => setShowCompose(true)}
-          disabled={!geo.coords}
+          disabled={!geo.realCoords || geo.simulating}
           className="absolute bottom-6 start-1/2 z-[500] flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full disabled:opacity-50"
           style={{ background: "var(--accent)", color: "var(--accent-contrast)", boxShadow: "var(--shadow)" }}
           aria-label={t("compose.title")}

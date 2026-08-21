@@ -154,7 +154,7 @@ export const translations: Record<Lang, Dictionary> = {
     },
     map: {
       dropHint: "Appuyez sur + pour déposer une note exactement là où vous êtes.",
-      simHint: "Mode simulation : cliquez ou glissez le point bleu pour déplacer votre position.",
+      simHint: "Mode simulation : déplacez le point bleu pour explorer. Dépôt de note désactivé — il faut votre vraie position.",
       accuracy: "Précision ±{value} m",
     },
     compose: {
@@ -274,7 +274,7 @@ export const translations: Record<Lang, Dictionary> = {
     },
     map: {
       dropHint: "Tap + to drop a note right where you are.",
-      simHint: "Simulation mode: click or drag the blue dot to move your position.",
+      simHint: "Simulation mode: drag the blue dot to explore. Dropping notes is disabled — your real position is required.",
       accuracy: "Accuracy ±{value} m",
     },
     compose: {
@@ -394,7 +394,7 @@ export const translations: Record<Lang, Dictionary> = {
     },
     map: {
       dropHint: "הקישו על + כדי להשאיר פתק בדיוק במקום בו אתם נמצאים.",
-      simHint: "מצב סימולציה: לחצו או גררו את הנקודה הכחולה כדי להזיז את המיקום שלכם.",
+      simHint: "מצב סימולציה: גררו את הנקודה הכחולה כדי לחקור. השארת פתק מושבתת - נדרש המיקום האמיתי שלכם.",
       accuracy: "דיוק ±{value} מ׳",
     },
     compose: {

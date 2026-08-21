@@ -96,6 +96,7 @@ export function useGeolocation() {
   return {
     ...geo,
     coords: effectiveCoords,
+    realCoords: geo.coords,
     realStatus: geo.status,
     simulating,
     toggleSimulation,
